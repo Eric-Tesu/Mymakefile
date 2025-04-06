@@ -1,0 +1,20 @@
+# Define the default target
+.PHONY: install test lint
+
+# Install dependencies
+install:
+  @echo "Installing dependencies..."
+  pip install -r requirements.txt
+
+# Run tests
+test:
+  @echo "Running tests..."
+  pytest
+
+# Run linters (e.g., flake8)
+lint:
+  @echo "Running linters..."
+  flake8 .
+
+# Default target to run
+default: install test lint
