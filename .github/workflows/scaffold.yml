@@ -1,20 +1,17 @@
-name: Scaffold
+name: Super-Linter
 
-on:
-  push:
-    branches:
-      - main  # Trigger on pushes to the main branch only
+on: push
 
 jobs:
-  scaffold:
+  super-lint:
     name: Lint code base
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Run Scaffold
-        uses: github/scaffold@v4  # Updated version
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
